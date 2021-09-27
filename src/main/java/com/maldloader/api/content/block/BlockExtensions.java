@@ -1,4 +1,4 @@
-package com.maldloader.api.content;
+package com.maldloader.api.content.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelAccessor;

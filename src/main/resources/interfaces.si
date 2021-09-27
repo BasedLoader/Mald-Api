@@ -1,4 +1,4 @@
 staticInjector	v1	named
 
-common net/minecraft/world/level/block/Block com/maldloader/api/content/BlockExtensions
-common net/minecraft/world/item/Item com/maldloader/api/content/ItemExtensions
+common net/minecraft/world/level/block/Block com/maldloader/api/content/block/BlockExtensions
+common net/minecraft/world/item/Item com/maldloader/api/content/block/ItemExtensions
