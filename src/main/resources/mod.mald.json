@@ -1,0 +1,6 @@
+{
+  "id": "mald_api",
+  "name": "Mald Api",
+  "description": "The Mald Loader's API",
+  "mixins": ["maldapi.mixins.json"]
+}

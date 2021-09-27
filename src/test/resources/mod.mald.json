@@ -1,0 +1,6 @@
+{
+  "id": "mald_tests",
+  "name": "Mald Api Tests",
+  "description": "Testing Mald Loader's API",
+  "mixins": []
+}
