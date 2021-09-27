@@ -1,6 +1,6 @@
 package com.maldloader.api.base.itemgroup.mixin;
 
-import com.maldloader.api.content.itemgroup.CreativeModeTabExtension;
+import com.maldloader.api.content.item.group.CreativeModeTabExtension;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;

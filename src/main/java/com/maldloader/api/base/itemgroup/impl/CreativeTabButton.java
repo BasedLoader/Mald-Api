@@ -1,6 +1,6 @@
 package com.maldloader.api.base.itemgroup.impl;
 
-import com.maldloader.api.content.itemgroup.CreativeModeInventoryScreenExtensions;
+import com.maldloader.api.content.item.group.CreativeModeInventoryScreenExtensions;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -27,10 +27,10 @@ public class CreativeTabButton extends Button {
     }
 
     @Override
-    public void render(PoseStack poseStack, int mouseX, int mouseY, float float_1) {
+    public void render(PoseStack stack, int mouseX, int mouseY, float float_1) {
         this.isHovered = mouseX >= this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
-        this.visible = gui.isVisible();
-        this.active = gui.isEnabled(type);
+        this.visible = ((CreativeModeInventoryScreenExtensions) gui).isVisible();
+        this.active = ((CreativeModeInventoryScreenExtensions) gui).isEnabled(type);
 
         if (this.visible) {
             int u = active && this.isHovered() ? 22 : 0;
@@ -38,10 +38,10 @@ public class CreativeTabButton extends Button {
 
             RenderSystem.setShaderTexture(0, BUTTON_TEX);
             RenderSystem.setShaderColor(1F, 1F, 1F, 1F);
-            this.blit(poseStack, this.x, this.y, u + (type == Type.NEXT ? 11 : 0), v, 11, 10);
+            this.blit(stack, this.x, this.y, u + (type == Type.NEXT ? 11 : 0), v, 11, 10);
 
             if (this.isHovered) {
-                gui.renderTooltip(poseStack, new TranslatableComponent("fabric.gui.creativeTabPage", gui.getCurrentPage() + 1, ((CreativeModeTab.TABS.length - 12) / 9) + 2), mouseX, mouseY);
+                gui.renderTooltip(stack, new TranslatableComponent("mald.gui.creativeTabPage", ((CreativeModeInventoryScreenExtensions) gui).getCurrentPage() + 1, ((CreativeModeTab.TABS.length - 12) / 9) + 2), mouseX, mouseY);
             }
         }
     }
