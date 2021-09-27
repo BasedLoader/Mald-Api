@@ -1,4 +1,8 @@
 staticInjector	v1	named
 
 common net/minecraft/world/level/block/Block com/maldloader/api/content/block/BlockExtensions
-common net/minecraft/world/item/Item com/maldloader/api/content/block/ItemExtensions
+common net/minecraft/world/item/Item com/maldloader/api/content/item/ItemExtensions
+
+common net/minecraft/world/item/CreativeModeTab com/maldloader/api/content/itemgroup/CreativeModeTabExtension
+
+client net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen com/maldloader/api/content/itemgroup/CreativeModeInventoryScreenExtensions

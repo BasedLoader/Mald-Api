@@ -2,5 +2,8 @@
   "id": "mald_api",
   "name": "Mald Api",
   "description": "The Mald Loader's API",
-  "mixins": ["maldapi.mixins.json"]
+  "mixins": [
+    "maldapi-resourceloader.mixins.json",
+    "maldapi-itemgroup.mixin.json"
+  ]
 }
