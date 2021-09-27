@@ -1,4 +1,4 @@
-package com.maldloader.api.content.itemgroup;
+package com.maldloader.api.content.item.group;
 
 import com.maldloader.api.base.itemgroup.impl.CreativeTabButton;
 
