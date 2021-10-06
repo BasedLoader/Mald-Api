@@ -1,6 +1,6 @@
-package com.maldloader.api.content.item.group;
+package com.maldloader.api.content.item.group.impl;
 
-import com.maldloader.api.base.itemgroup.impl.CreativeTabButton;
+import com.maldloader.api.content.item.group.impl.CreativeTabButton;
 
 public interface CreativeModeInventoryScreenExtensions {
     void nextPage();

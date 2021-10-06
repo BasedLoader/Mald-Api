@@ -1,6 +1,5 @@
-package com.maldloader.api.base.itemgroup.impl;
+package com.maldloader.api.content.item.group.impl;
 
-import com.maldloader.api.content.item.group.CreativeModeInventoryScreenExtensions;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 

@@ -1,7 +1,7 @@
-package com.maldloader.api.base.itemgroup.mixin.client;
+package com.maldloader.api.content.item.group.mixin.client;
 
-import com.maldloader.api.base.itemgroup.impl.CreativeTabButton;
-import com.maldloader.api.content.item.group.CreativeModeInventoryScreenExtensions;
+import com.maldloader.api.content.item.group.impl.CreativeTabButton;
+import com.maldloader.api.content.item.group.impl.CreativeModeInventoryScreenExtensions;
 import com.mojang.blaze3d.vertex.PoseStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

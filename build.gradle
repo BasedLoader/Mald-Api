@@ -30,18 +30,18 @@ dependencies {
         exclude module: 'asm-tree'
     }
 
-    implementation "com.maldloader:MaldLoader:0.2"
+    implementation "com.maldloader:MaldLoader:0.3"
     includeRuntime 'com.google.code.gson:gson:2.8.8'
-    includeRuntime ("com.maldloader:minecraft:0.2") {
+    includeRuntime ("com.maldloader:minecraft:0.3") {
         exclude module: "MaldLoader"
     }
-    includeRuntime("com.maldloader:mixin:0.2") {
+    includeRuntime("com.maldloader:mixin:0.3") {
         exclude module: "MaldLoader"
     }
 }
 
 minecraft {
-    latestSnapshot()
+    version("1.17.1")
     staticInjectors("src/main/resources/interfaces.si")
 
     runs {

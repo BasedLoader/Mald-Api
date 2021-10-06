@@ -1,4 +1,4 @@
-package com.maldloader.api.base.itemgroup.api;
+package com.maldloader.api.content.item.group.api;
 
 import java.util.List;
 import java.util.function.BiConsumer;

@@ -1,6 +1,6 @@
-package com.maldloader.api.base.itemgroup.mixin;
+package com.maldloader.api.content.item.group.mixin;
 
-import com.maldloader.api.content.item.group.CreativeModeTabExtension;
+import com.maldloader.api.content.item.group.impl.CreativeModeTabExtension;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -18,8 +18,6 @@ public class CreativeModeTabMixin implements CreativeModeTabExtension {
         CreativeModeTab[] tempTabs = TABS;
         TABS = new CreativeModeTab[TABS.length + 1];
 
-        for(int i = 0; i < tempTabs.length; i++) {
-            TABS[i] = tempTabs[i];
-        }
+        System.arraycopy(tempTabs, 0, TABS, 0, tempTabs.length);
     }
 }
