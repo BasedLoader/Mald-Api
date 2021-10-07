@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.maldloader.api.base.itemgroup.mixin",
+  "package": "com.maldloader.api.content.item.group.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "CreativeModeTabMixin"
