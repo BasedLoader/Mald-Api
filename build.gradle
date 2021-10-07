@@ -30,12 +30,12 @@ dependencies {
         exclude module: 'asm-tree'
     }
 
-    implementation "com.maldloader:MaldLoader:0.3"
+    implementation "com.maldloader:MaldLoader:0.2"
     includeRuntime 'com.google.code.gson:gson:2.8.8'
-    includeRuntime ("com.maldloader:minecraft:0.3") {
+    includeRuntime ("com.maldloader:minecraft:0.2") {
         exclude module: "MaldLoader"
     }
-    includeRuntime("com.maldloader:mixin:0.3") {
+    includeRuntime("com.maldloader:mixin:0.2") {
         exclude module: "MaldLoader"
     }
 }

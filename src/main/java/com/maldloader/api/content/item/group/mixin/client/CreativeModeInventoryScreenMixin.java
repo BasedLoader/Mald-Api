@@ -19,14 +19,17 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.CreativeModeTab;
 
 @Mixin(CreativeModeInventoryScreen.class)
-public abstract class CreativeModeInventoryScreenMixin extends EffectRenderingInventoryScreen implements CreativeModeInventoryScreenExtensions {
+public abstract class CreativeModeInventoryScreenMixin extends EffectRenderingInventoryScreen<CreativeModeInventoryScreen.ItemPickerMenu> implements CreativeModeInventoryScreenExtensions {
+
     public CreativeModeInventoryScreenMixin(AbstractContainerMenu abstractContainerMenu, Inventory inventory, Component component) {
-        super(abstractContainerMenu, inventory, component);
+        super((CreativeModeInventoryScreen.ItemPickerMenu) abstractContainerMenu, inventory, component);
     }
 
-    @Shadow public abstract int getSelectedTab();
+    @Shadow
+    public abstract int getSelectedTab();
 
-    @Shadow protected abstract void selectTab(CreativeModeTab $$0);
+    @Shadow
+    protected abstract void selectTab(CreativeModeTab $$0);
 
     @Unique
     private static int currentPage = 0;
@@ -42,15 +45,15 @@ public abstract class CreativeModeInventoryScreenMixin extends EffectRenderingIn
 
     @Override
     public void nextPage() {
-        if(getOffsetPage(currentPage + 1) >= CreativeModeTab.TABS.length)
+        if (getOffsetPage(currentPage + 1) >= CreativeModeTab.TABS.length)
             return;
         currentPage++;
     }
 
     @Override
     public void prevPage() {
-        if(currentPage > 0)
-            currentPage --;
+        if (currentPage > 0)
+            currentPage--;
     }
 
     @Override
@@ -100,38 +103,38 @@ public abstract class CreativeModeInventoryScreenMixin extends EffectRenderingIn
 
     @Inject(method = "selectTab", at = @At("HEAD"), cancellable = true)
     private void setSelectedTab(CreativeModeTab creativeModeTab, CallbackInfo info) {
-        if (!isGroupVisible(creativeModeTab)) {
+        if (isGroupInvisible(creativeModeTab)) {
             info.cancel();
         }
     }
 
     @Inject(method = "checkTabHovering", at = @At("HEAD"), cancellable = true)
     private void renderTabTooltipIfHovered(PoseStack poseStack, CreativeModeTab creativeModeTab, int mx, int my, CallbackInfoReturnable<Boolean> info) {
-        if (!isGroupVisible(creativeModeTab)) {
+        if (isGroupInvisible(creativeModeTab)) {
             info.setReturnValue(false);
         }
     }
 
     @Inject(method = "checkTabClicked", at = @At("HEAD"), cancellable = true)
     private void isClickInTab(CreativeModeTab creativeModeTab, double mx, double my, CallbackInfoReturnable<Boolean> info) {
-        if (!isGroupVisible(creativeModeTab)) {
+        if (isGroupInvisible(creativeModeTab)) {
             info.setReturnValue(false);
         }
     }
 
     @Inject(method = "renderTabButton", at = @At("HEAD"), cancellable = true)
     private void renderTabIcon(PoseStack poseStack, CreativeModeTab creativeModeTab, CallbackInfo info) {
-        if (!isGroupVisible(creativeModeTab)) {
+        if (isGroupInvisible(creativeModeTab)) {
             info.cancel();
         }
     }
 
     @Unique
-    private boolean isGroupVisible(CreativeModeTab creativeModeTab) {
+    private boolean isGroupInvisible(CreativeModeTab creativeModeTab) {
         if (CreativeModeTab.TAB_HOTBAR.equals(creativeModeTab) || creativeModeTab.equals(CreativeModeTab.TAB_INVENTORY) || creativeModeTab.equals(CreativeModeTab.TAB_SEARCH))
-            return true;
+            return false;
 
-        return currentPage == getOffsetPage(creativeModeTab.getId());
+        return currentPage != getOffsetPage(creativeModeTab.getId());
     }
 
 }
