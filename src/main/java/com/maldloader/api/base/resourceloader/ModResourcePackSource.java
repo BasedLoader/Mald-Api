@@ -29,7 +29,7 @@ public class ModResourcePackSource implements RepositorySource {
 	@Override
 	public void loadPacks(Consumer<Pack> consumer, Pack.PackConstructor packConstructor) {
 		List<NioPackResources> packResources = new ArrayList<>();
-		MaldLoader.getInstance().getMod("mald_api").getPath().resolveExists("assets");
+		//MaldLoader.getInstance().getMod("mald_api").getPath().resolveExists("assets");
 		//TODO: loader needs to be able to get the "root path" of assets inside of mods
 	}
 

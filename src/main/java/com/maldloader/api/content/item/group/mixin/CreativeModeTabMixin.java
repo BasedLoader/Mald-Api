@@ -19,8 +19,8 @@ public class CreativeModeTabMixin implements CreativeModeTabExtension {
     @Mutable
     @Shadow @Final public static CreativeModeTab[] TABS;
 
-    @Inject(method = "<init>", at = @At("TAIL"))
-    private void conc(int param0, String param1, CallbackInfo ci) {
+    @Inject(method = "<clinit>()V", at = @At("RETURN"))
+    private static void conc(CallbackInfo ci) {
         MaldCreativeModeTab.create(new ResourceLocation("mald:test"), () -> Items.DIAMOND_HOE);
     }
 

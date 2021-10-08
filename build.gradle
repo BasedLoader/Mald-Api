@@ -41,7 +41,7 @@ dependencies {
 }
 
 minecraft {
-    version("1.17.1")
+    latestRelease()
     staticInjectors("src/main/resources/interfaces.si")
 
     runs {
