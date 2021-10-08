@@ -94,11 +94,11 @@ public abstract class CreativeModeInventoryScreenMixin extends EffectRenderingIn
     private void init(CallbackInfo info) {
         updateSelection();
 
-        int xpos = topPos + 116;
-        int ypos = leftPos - 10;
+        int xPos = topPos + 116;
+        int yPos = leftPos - 10;
 
-        addRenderableWidget(new CreativeTabButton(xpos + 11, ypos, CreativeTabButton.Type.NEXT, (CreativeModeInventoryScreen) (Object) this));
-        addRenderableWidget(new CreativeTabButton(xpos, ypos, CreativeTabButton.Type.PREVIOUS, (CreativeModeInventoryScreen) (Object) this));
+        addRenderableWidget(new CreativeTabButton(xPos + 11, yPos, CreativeTabButton.Type.NEXT, (CreativeModeInventoryScreen) (Object) this));
+        addRenderableWidget(new CreativeTabButton(xPos, yPos, CreativeTabButton.Type.PREVIOUS, (CreativeModeInventoryScreen) (Object) this));
     }
 
     @Inject(method = "selectTab", at = @At("HEAD"), cancellable = true)
