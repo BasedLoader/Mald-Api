@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("com.maldloader.gradle.vanilla") version "0.3.3"
+    id("com.maldloader.gradle.vanilla") version "0.3.6"
 }
 
 group 'com.maldloader'
@@ -12,6 +12,7 @@ repositories {
     maven { url = "https://maven.fabricmc.net/" }
     maven { url = "https://maven.minecraftforge.net/" }
     maven { url = "https://libraries.minecraft.net/" }
+    maven { url = "https://maven.quiltmc.org/repository/snapshot" }
 }
 configurations {
     includeRuntime {} // todo add JiJ
@@ -30,12 +31,12 @@ dependencies {
         exclude module: 'asm-tree'
     }
 
-    implementation "com.maldloader:MaldLoader:0.2"
-    includeRuntime 'com.google.code.gson:gson:2.8.8'
-    includeRuntime ("com.maldloader:minecraft:0.2") {
+    implementation "com.maldloader:MaldLoader:0.2.0"
+    includeRuntime 'com.google.code.gson:gson:2.8.9'
+    includeRuntime ("com.maldloader:minecraft:0.2.0") {
         exclude module: "MaldLoader"
     }
-    includeRuntime("com.maldloader:mixin:0.2") {
+    includeRuntime("com.maldloader:mixin:0.2.0") {
         exclude module: "MaldLoader"
     }
 }

@@ -32,7 +32,7 @@ public class CreativeTabButton extends Button {
         this.active = ((CreativeModeInventoryScreenExtensions) gui).isEnabled(type);
 
         if (this.visible) {
-            int u = active && this.isHovered() ? 22 : 0;
+            int u = active && this.isHovered ? 22 : 0;
             int v = active ? 0 : 10;
 
             RenderSystem.setShaderTexture(0, BUTTON_TEX);
